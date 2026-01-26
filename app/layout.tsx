@@ -8,22 +8,25 @@ import '@/styles/globals.css';
  */
 export const metadata: Metadata = {
   title: {
-    default: 'Pierrick Autret | Développeur Full-Stack',
+    default: 'Pierrick Autret | Développeur Web & Logiciel',
     template: '%s | Pierrick Autret',
   },
   description:
-    'Développeur Full-Stack étudiant en BUT Informatique à Toulouse. Spécialisé en React, React Native, NestJS et TypeScript. Recherche Alternance pour poursuite d\'études.',
+    'Étudiant en BUT Informatique à Toulouse. Passionné par la conception d\'architectures logicielles robustes, la logique métier complexe et le développement bas niveau. Expérience en backend avec PHP ou NestJS, GraphQL et projets personnels en C++, reverse engineering et exploitation mémoire.',
   keywords: [
-    'développeur full-stack',
-    'React',
-    'React Native',
+    'développeur backend',
+    'architecture logicielle',
     'NestJS',
-    'TypeScript',
-    'MongoDB',
+    'PHP',
     'GraphQL',
+    'TypeScript',
+    'C++',
+    'reverse engineering',
+    'développement bas niveau',
     'Toulouse',
     'alternance',
     'BUT Informatique',
+    'logique métier',
   ],
   authors: [{ name: 'Pierrick Autret' }],
   creator: 'Pierrick Autret',
@@ -32,19 +35,26 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: 'https://pierrick-autret.vercel.app',
     siteName: 'Portfolio Pierrick Autret',
-    title: 'Pierrick Autret | Développeur Full-Stack',
+    title: 'Pierrick Autret | Développeur Web & Logiciel',
     description:
-      'Développeur Full-Stack étudiant en BUT Informatique à Toulouse. Spécialisé en React, React Native, NestJS et TypeScript. Recherche Alternance pour poursuite d\'études.',
+      'Étudiant en BUT Informatique à Toulouse. Passionné par la conception d\'architectures logicielles robustes, la logique métier complexe et le développement bas niveau. Expérience en backend avec PHP ou NestJS, GraphQL et projets en C++.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pierrick Autret | Développeur Full-Stack',
+    title: 'Pierrick Autret | Développeur Web & Logiciel',
     description:
-      'Développeur Full-Stack étudiant en BUT Informatique à Toulouse. Spécialisé en React, React Native, NestJS et TypeScript.',
+      'Passionné par l\'architecture logicielle, la logique métier complexe et le développement bas niveau. Backend NestJS, PHP, GraphQL, C++ et reverse engineering.',
   },
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-icon.png',
   },
 };
 
