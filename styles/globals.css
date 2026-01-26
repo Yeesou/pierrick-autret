@@ -1,0 +1,144 @@
+/**
+ * Styles globaux - Thème Gaming Nocturne
+ * Organisation en 3 layers : base, components, utilities
+ * Palette : Violet, Turquoise, Rose, Dark
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE LAYER - Styles de base et reset
+   ============================================ */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-gaming-darker text-white antialiased;
+  }
+
+  h1 {
+    @apply text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl font-bold tracking-tight md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* ============================================
+   COMPONENTS LAYER - Composants réutilisables
+   ============================================ */
+@layer components {
+  /* Container principal responsive */
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Boutons */
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-6 py-3;
+    @apply font-medium transition-colors duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary-600 to-gaming-violet text-white;
+    @apply hover:from-primary-500 hover:to-primary-600;
+    @apply focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn border-2 border-primary-500/50 bg-gaming-dark text-primary-300;
+    @apply hover:border-primary-400 hover:bg-primary-500/10;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-xl bg-gaming-dark p-6 shadow-lg;
+    @apply border border-primary-500/20;
+    @apply transition-colors duration-200 hover:border-primary-500/50;
+  }
+
+  /* Navigation link */
+  .nav-link {
+    @apply text-neutral-300 hover:text-primary-400;
+    @apply font-medium transition-colors duration-200;
+    @apply relative;
+  }
+
+  .nav-link-active {
+    @apply text-primary-400;
+  }
+
+  .nav-link-active::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-500 to-accent-400;
+  }
+
+  /* Tags / Badges */
+  .tag {
+    @apply inline-flex items-center rounded-full px-3 py-1;
+    @apply bg-primary-500/20 text-primary-300 text-sm font-medium;
+    @apply border border-primary-500/30;
+  }
+}
+
+/* ============================================
+   UTILITIES LAYER - Utilitaires personnalisés
+   ============================================ */
+@layer utilities {
+  /* Text gradient gaming */
+  .text-gradient {
+    @apply bg-gradient-to-r from-gaming-pink via-primary-400 to-accent-400 bg-clip-text text-transparent;
+  }
+
+  /* Text gradient alternatif */
+  .text-gradient-alt {
+    @apply bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent;
+  }
+
+  /* Focus visible ring */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-gaming-darker;
+  }
+
+  /* Aspect ratios pour les images */
+  .aspect-project {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* Animation hover avec glow */
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-1;
+  }
+
+  /* Background avec effet glassmorphism */
+  .glass {
+    @apply bg-gaming-dark/80 border border-primary-500/20;
+  }
+
+  /* Effet neon text */
+  .text-neon {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+  }
+}
