@@ -9,7 +9,7 @@ import type { SkillCategory } from '@/types';
 export const metadata: Metadata = {
   title: 'À propos',
   description:
-    'Pierrick Autret - Développeur Full-Stack étudiant en BUT Informatique à Toulouse. Découvrez mon parcours, mes compétences et mes expériences.',
+    'Pierrick Autret - Développeur Full-Stack étudiant en BUT Informatique à Toulouse. Découvrez le parcours, les compétences et les expériences de Pierrick Autret.',
 };
 
 /**

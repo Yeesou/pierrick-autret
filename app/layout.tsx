@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     'Étudiant en BUT Informatique à Toulouse. Passionné par la conception d\'architectures logicielles robustes, la logique métier complexe et le développement bas niveau. Expérience en backend avec PHP ou NestJS, GraphQL et projets personnels en C++, reverse engineering et exploitation mémoire.',
   keywords: [
+    'Pierrick Autret',
+    'Pierrick Autret portfolio',
+    'Pierrick Autret développeur',
     'développeur backend',
     'architecture logicielle',
     'NestJS',
@@ -69,8 +72,43 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // JSON-LD Schema pour améliorer le référencement Google
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Pierrick Autret',
+    jobTitle: 'Développeur Web & Logiciel',
+    description: 'Étudiant en BUT Informatique à Toulouse, spécialisé en architecture logicielle, développement backend et bas niveau',
+    url: 'https://pierrick-autret.vercel.app',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Toulouse',
+      addressCountry: 'FR',
+    },
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'IUT de Toulouse',
+    },
+    knowsAbout: [
+      'Développement Backend',
+      'NestJS',
+      'PHP',
+      'GraphQL',
+      'TypeScript',
+      'C++',
+      'Architecture Logicielle',
+      'Reverse Engineering',
+    ],
+  };
+
   return (
     <html lang="fr" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>

@@ -35,8 +35,8 @@ Portfolio personnel statique développé avec Next.js 14, TypeScript et Tailwind
 
 ```bash
 # Cloner le repo
-git clone https://github.com/username/portfolio.git
-cd portfolio
+git clone https://github.com/yeesou/pierrick-autret.git
+cd pierrick-autret
 
 # Installer les dépendances
 npm install

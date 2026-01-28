@@ -55,13 +55,13 @@ export default function HomePage() {
 
             {/* Titre principal */}
             <h1 className="max-w-4xl text-white">
-              Développeur{' '}
+              Pierrick Autret - Développeur{' '}
               <span className="text-gradient">Web & Logiciel</span>
             </h1>
 
             {/* Sous-titre */}
             <p className="mt-6 max-w-2xl text-lg text-neutral-300">
-              Étudiant en BUT Informatique à Toulouse. Passionné par la conception
+              Je suis Pierrick Autret, étudiant en BUT Informatique à Toulouse. Passionné par la conception
               d&apos;architectures logicielles robustes, la logique métier complexe et le
               développement bas niveau. Expérience en backend avec PHP ou NestJS, GraphQL et
               projets personnels en C++, reverse engineering et exploitation mémoire.
