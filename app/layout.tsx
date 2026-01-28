@@ -7,6 +7,13 @@ import '@/styles/globals.css';
  * Appliquées à toutes les pages par défaut
  */
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pierrick-autret.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
+  verification: {
+    google: '3V3-wH9UBYADhBndhgKGzx6qTu_4iflg1FJ0bsO4ooU',
+  },
   title: {
     default: 'Pierrick Autret | Développeur Web & Logiciel',
     template: '%s | Pierrick Autret',
