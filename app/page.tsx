@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Section, ProjectCard } from '@/components';
-import { getFeaturedProjects } from '@/data/projects';
+import { getFeaturedProjects, projects } from '@/data/projects';
 import { skills, skillCategoryLabels, skillLevelLabels } from '@/data/skills';
 import type { SkillCategory } from '@/types';
 
@@ -12,6 +12,11 @@ import type { SkillCategory } from '@/types';
  */
 export default function HomePage() {
   const featuredProjects = getFeaturedProjects();
+  
+  // Calculs dynamiques des statistiques
+  const totalProjects = projects.length;
+  const totalSkills = skills.length;
+  const yearsOfExperience = new Date().getFullYear() - 2023;
 
   // Grouper les compétences par catégorie
   const skillCategories: SkillCategory[] = ['frontend', 'backend', 'tools'];
@@ -82,19 +87,19 @@ export default function HomePage() {
         {/* Stats rapides */}
         <div className="mt-16 grid grid-cols-3 gap-8 border-t border-primary-500/20 pt-8">
           <div className="text-center">
-            <p className="text-3xl font-bold text-gradient-alt">3+</p>
+            <p className="text-3xl font-bold text-gradient-alt">{totalProjects}+</p>
             <p className="mt-1 text-sm text-neutral-400">
               Projets réalisés
             </p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-gradient-alt">3</p>
+            <p className="text-3xl font-bold text-gradient-alt">{yearsOfExperience}</p>
             <p className="mt-1 text-sm text-neutral-400">
               Ans d&apos;expérience
             </p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-gradient-alt">15+</p>
+            <p className="text-3xl font-bold text-gradient-alt">{totalSkills}+</p>
             <p className="mt-1 text-sm text-neutral-400">
               Technologies maîtrisées
             </p>
