@@ -11,7 +11,8 @@ import type { SkillCategory } from '@/types';
  * - Compétences principales
  */
 export default function HomePage() {
-  const featuredProjects = getFeaturedProjects();
+  // Dupliquer les projets deux fois pour créer une boucle seamless en CSS
+  const duplicatedProjects = [...projects, ...projects];
   
   // Calculs dynamiques des statistiques
   const totalProjects = projects.length;
@@ -83,44 +84,40 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        {/* Stats rapides */}
-        <div className="mt-16 grid grid-cols-3 gap-8 border-t border-primary-500/20 pt-8">
-          <div className="text-center">
-            <p className="text-3xl font-bold text-gradient-alt">{totalProjects}+</p>
-            <p className="mt-1 text-sm text-neutral-400">
-              Projets réalisés
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="text-3xl font-bold text-gradient-alt">{yearsOfExperience}</p>
-            <p className="mt-1 text-sm text-neutral-400">
-              Ans d&apos;expérience
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="text-3xl font-bold text-gradient-alt">{totalSkills}+</p>
-            <p className="mt-1 text-sm text-neutral-400">
-              Technologies maîtrisées
-            </p>
-          </div>
-        </div>
       </Section>
 
-      {/* Featured Projects */}
+      {/* Carrousel horizontal infini de projets */}
       <Section
-        title="Projets récents"
-        subtitle="Découvrez une sélection de mes derniers projets personnels et académiques."
+        title="Mes projets"
+        subtitle="Découvrez tous mes projets personnels et académiques."
       >
-        <div className="grid gap-6 md:grid-cols-2">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        <div className="relative overflow-x-hidden overflow-y-visible">
+          {/* Conteneur carrousel avec animation infinie */}
+          <div className="carousel-container group">
+            <div className="carousel-track">
+              {duplicatedProjects.map((project, index) => (
+                <div 
+                  key={`${project.id}-${index}`} 
+                  className="carousel-item"
+                >
+                  <ProjectCard project={project} />
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Indicateur */}
+          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-neutral-400">
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 10a1 1 0 011-1h4a1 1 0 110 2h-4a1 1 0 01-1-1zM9 14a1 1 0 011-1h4a1 1 0 110 2h-4a1 1 0 01-1-1z" />
+            </svg>
+            <span>Animation infinie - Survolez pour mettre en pause</span>
+          </div>
         </div>
 
         <div className="mt-8 text-center">
           <Link href="/projects" className="btn-secondary">
-            Voir tous les projets
+            Voir tous les projets en détail
           </Link>
         </div>
       </Section>

@@ -141,4 +141,80 @@
   .text-neon {
     text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
   }
+
+  /* Carrousel infini avec animation CSS */
+  .carousel-container {
+    @apply relative w-full;
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .carousel-track {
+    @apply flex gap-6;
+    animation: scroll 40s linear infinite;
+  }
+
+  .carousel-container:hover .carousel-track {
+    animation-play-state: paused;
+  }
+
+  .carousel-item {
+    @apply flex-shrink-0 w-[350px] md:w-[400px];
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-400px * 5 - 24px * 5));
+    }
+  }
+
+  @media (max-width: 768px) {
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-350px * 5 - 24px * 5));
+      }
+    }
+  }
+
+  /* Scrollbar personnalisée pour le carrousel */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .scrollbar-track-gaming-darker::-webkit-scrollbar-track {
+    @apply bg-gaming-darker rounded-full;
+  }
+
+  .scrollbar-thumb-primary-500::-webkit-scrollbar-thumb {
+    @apply bg-primary-500/50 rounded-full;
+  }
+
+  .scrollbar-thumb-primary-500:hover::-webkit-scrollbar-thumb,
+  .hover\:scrollbar-thumb-primary-400:hover::-webkit-scrollbar-thumb {
+    @apply bg-primary-400;
+  }
 }
