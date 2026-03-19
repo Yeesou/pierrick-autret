@@ -34,7 +34,7 @@ export default function HomePage() {
               {/* Placeholder image - Remplacer par votre photo */}
               <div className="h-48 w-48 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 p-1">
                 <div className="h-full w-full rounded-full bg-gaming-darker flex items-center justify-center overflow-hidden">
-                  {/* Remplacer cette div par <img src="/images/profile.png" alt="Pierrick Autret" /> */}
+                  {/* Remplacer cette div par <img src="/images/profile-v2.png" alt="Pierrick Autret" /> */}
                   {/* <svg 
                     className="h-32 w-32 text-neutral-600" 
                     fill="currentColor" 
@@ -42,7 +42,7 @@ export default function HomePage() {
                   >
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                   </svg> */}
-                  <img src="/images/photo/profile.png" alt="Pierrick Autret" />
+                  <img src="/images/photo/profile-v2.png" alt="Pierrick Autret" />
                 </div>
               </div>
               {/* Badge de disponibilité */}

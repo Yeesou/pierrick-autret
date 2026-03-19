@@ -35,7 +35,7 @@ export default function AboutPage() {
           <div className="order-2 md:order-1">
             <div className="aspect-square overflow-hidden rounded-2xl bg-gaming-dark border border-primary-500/20">
               <div className="flex h-full items-center justify-center text-primary-400">
-                <img src="/images/photo/profile.png" alt="Pierrick Autret" />
+                <img src="/images/photo/profile-v2.png" alt="Pierrick Autret" />
               </div>
             </div>
           </div>
